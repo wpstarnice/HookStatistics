@@ -49,7 +49,6 @@
 		27586A521E0CFBA700D24FCF /* NSObject+Hook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Hook.m"; sourceTree = "<group>"; };
 		27586A5A1E0CFBA700D24FCF /* StatisticManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatisticManager.h; sourceTree = "<group>"; };
 		27586A5B1E0CFBA700D24FCF /* StatisticManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatisticManager.m; sourceTree = "<group>"; };
-		27586A691E0CFCEF00D24FCF /* ViewController+Hook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+Hook.h"; sourceTree = "<group>"; };
 		27586A6A1E0CFCEF00D24FCF /* ViewController+Hook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+Hook.m"; sourceTree = "<group>"; };
 		27586A721E0D06CC00D24FCF /* CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
 		27586A731E0D06CC00D24FCF /* CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
@@ -160,7 +159,6 @@
 		27586A6E1E0CFE5800D24FCF /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				27586A691E0CFCEF00D24FCF /* ViewController+Hook.h */,
 				27586A6A1E0CFCEF00D24FCF /* ViewController+Hook.m */,
 			);
 			name = Custom;
@@ -478,6 +476,7 @@
 				27586A4A1E0CFB5A00D24FCF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27586A4B1E0CFB5A00D24FCF /* Build configuration list for PBXNativeTarget "HookStatisticsTests" */ = {
 			isa = XCConfigurationList;
@@ -486,6 +485,7 @@
 				27586A4D1E0CFB5A00D24FCF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
