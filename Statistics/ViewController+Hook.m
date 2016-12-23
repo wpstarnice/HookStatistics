@@ -6,7 +6,7 @@
 //  Copyright © 2016年 yd. All rights reserved.
 //
 
-#import "ViewController+Hook.h"
+#import "ViewController.h"
 #import "NSObject+Hook.h"
 
 #warning at  the postion of sentence "insert arg to statistic database" ,need logging data
