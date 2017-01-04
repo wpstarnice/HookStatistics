@@ -90,7 +90,7 @@
     if (nil == _normalBtn) {
         
         _normalBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_normalBtn setFrame:CGRectMake(100, 50, 100, 100)];
+        [_normalBtn setFrame:CGRectMake(100, 50, 150, 50)];
         [_normalBtn setTitle:@"testNormalClick" forState:UIControlStateNormal];
         [_normalBtn setBackgroundColor:[UIColor blueColor]];
         [_normalBtn addTarget:self action:@selector(clickTestNormal) forControlEvents:UIControlEventTouchUpInside];
@@ -104,7 +104,7 @@
     if (nil == _protocolBtn) {
         
         _protocolBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_protocolBtn setFrame:CGRectMake(100, 150, 100, 100)];
+        [_protocolBtn setFrame:CGRectMake(100, 150, 150, 50)];
         [_protocolBtn setTitle:@"testprotocol" forState:UIControlStateNormal];
         [_protocolBtn setBackgroundColor:[UIColor redColor]];
         [_protocolBtn addTarget:self action:@selector(clickTestProtocol) forControlEvents:UIControlEventTouchUpInside];
@@ -118,7 +118,7 @@
     if (nil == _blockBtn) {
         
         _blockBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_blockBtn setFrame:CGRectMake(100, 250, 100, 100)];
+        [_blockBtn setFrame:CGRectMake(100, 250, 150, 50)];
         [_blockBtn setTitle:@"testblock" forState:UIControlStateNormal];
         [_blockBtn setBackgroundColor:[UIColor purpleColor]];
         [_blockBtn addTarget:self action:@selector(clickTestBlock) forControlEvents:UIControlEventTouchUpInside];

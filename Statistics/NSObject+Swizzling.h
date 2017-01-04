@@ -1,5 +1,5 @@
 //
-//  NSObject+Hook.h
+//  NSObject+Swizzling.h
 //  SuperCalculator
 //
 //  Created by Peng Wang on 2016/12/7.
@@ -8,8 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSObject (Hook)
-
+@interface NSObject (Swizzling)
 
 /**
  get the certain class method imp
@@ -18,7 +17,7 @@
 
  @return imp
  */
-+ (IMP)getClassMethodImpletionWith:(SEL)sel;
++ (IMP)classMethodIMPForSelector:(SEL)sel;
 
 /**
  @description get the certain instance method imp
@@ -27,7 +26,7 @@
  
  @return IMP
  */
-+ (IMP)getInstanceMethodImpletionWith:(SEL)sel;
++ (IMP)instanceMethodIMPForSelector:(SEL)sel;
 
 /**
  @description exchange two class method
@@ -35,7 +34,7 @@
  @param sel1 original sel
  @param sel2 replacement
  */
-+ (void)swizzlingClassSelector:(SEL)sel1 withMethod:(SEL )sel2;
++ (void)swizzleClassSelector:(SEL)sel1 andSelector:(SEL )sel2;
 
 /**
  @description exchange two instance method
@@ -43,6 +42,6 @@
  @param sel1 original sel
  @param sel2 replacement
  */
-+ (void)swizzlingInstanceSelector:(SEL)sel1 withMethod:(SEL )sel2;
++ (void)swizzleInstanceSelector:(SEL)sel1 andSelector:(SEL )sel2;
 
 @end

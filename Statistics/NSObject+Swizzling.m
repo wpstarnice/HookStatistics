@@ -1,17 +1,17 @@
 //
-//  NSObject+Hook.m
+//  NSObject+Swizzling.m
 //  SuperCalculator
 //
 //  Created by Peng Wang on 2016/12/7.
 //  Copyright © 2016年 youdao. All rights reserved.
 //
 
-#import "NSObject+Hook.h"
+#import "NSObject+Swizzling.h"
 #import <objc/runtime.h>
 
-@implementation NSObject (Hook)
+@implementation NSObject (Swizzling)
 
-+ (IMP)getClassMethodImpletionWith:(SEL)sel{
++ (IMP)classMethodIMPForSelector:(SEL)sel{
 
     Method method = class_getClassMethod([self class], sel);
     IMP  imp = method_getImplementation(method);
@@ -19,7 +19,7 @@
     return  imp;
 }
 
-+ (IMP)getInstanceMethodImpletionWith:(SEL)sel{
++ (IMP)instanceMethodIMPForSelector:(SEL)sel{
     
     Method method = class_getInstanceMethod([self class], sel);
     IMP  imp = method_getImplementation(method);
@@ -27,7 +27,7 @@
     return  imp;
 }
 
-+ (void)swizzlingClassSelector:(SEL)sel1 withMethod:(SEL )sel2  {
++ (void)swizzleClassSelector:(SEL)sel1 andSelector:(SEL )sel2  {
         
         SEL originalSelector = sel1;
         SEL swizzledSelector = sel2;
@@ -52,7 +52,7 @@
         }
 }
 
-+ (void)swizzlingInstanceSelector:(SEL)sel1 withMethod:(SEL )sel2  {
++ (void)swizzleInstanceSelector:(SEL)sel1 andSelector:(SEL )sel2  {
         
         Class class = [self class];
         

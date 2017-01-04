@@ -12,7 +12,10 @@
 
 -(void)doSomething{
     
-     [self.delegate  someDelegateTriggerWithArg:[UIColor yellowColor]];
+    NSArray *colors = @[[UIColor orangeColor],[UIColor redColor],[UIColor yellowColor]];
+    int index= (arc4random() % 3);
+    
+    [self.delegate  someDelegateTriggerWithArg:colors[index]];
 }
 
 @end

@@ -8,7 +8,7 @@
 
 #import "StatisticManager.h"
 #import "AppDelegate.h"
-#import "NSObject+Hook.h"
+#import "Aspects.h"
 
 @implementation StatisticManager
 
@@ -46,6 +46,7 @@
 
 /** batch load methods
  @description hooks by datasource:hookObjects
+ 
  hookObjects is a dictionary  such as:
     @{@"ViewController1":@[@"method1",@"method2"],
       @"ViewController2":@[@"method3",@"method4"]
@@ -67,9 +68,13 @@
      enumerateObjectsUsingBlock:^(NSString *selector, NSUInteger idx, BOOL *_Nonnull stop) {
          
          SEL sel = NSSelectorFromString(selector);
-         SEL hk_sel = NSSelectorFromString([NSString stringWithFormat:@"hk_%@",selector]);
          
-          [kClass swizzlingInstanceSelector:sel withMethod:hk_sel];
+         [kClass aspect_hookSelector:sel
+                         withOptions:AspectPositionAfter
+                          usingBlock:^(id<AspectInfo> aspectInfo) {
+                              
+                             // statistics
+                          } error:NULL];
      }];
 }
 

@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "NSObject+Hook.h"
+#import "NSObject+Swizzling.h"
 
 #warning at  the postion of sentence "insert arg to statistic database" ,need logging data
 
@@ -17,18 +17,18 @@ static IMP originBlockMethodImp = NULL;
 
 +(void)load{
 
-    [self swizzlingClassSelector:NSSelectorFromString(@"privateClassMethod") withMethod:NSSelectorFromString(@"hk_privateClassMethod")];
+    [self swizzleClassSelector:NSSelectorFromString(@"privateClassMethod") andSelector:NSSelectorFromString(@"hk_privateClassMethod")];
     
-    [self swizzlingInstanceSelector:NSSelectorFromString(@"privateInstanceMethod") withMethod:NSSelectorFromString(@"hk_privateInstanceMethod")];
+    [self swizzleInstanceSelector:NSSelectorFromString(@"privateInstanceMethod") andSelector:NSSelectorFromString(@"hk_privateInstanceMethod")];
     
-    [self swizzlingInstanceSelector:NSSelectorFromString(@"clickTestNormal") withMethod:NSSelectorFromString(@"hk_clickTestNormal")];
+    [self swizzleInstanceSelector:NSSelectorFromString(@"clickTestNormal") andSelector:NSSelectorFromString(@"hk_clickTestNormal")];
     
-    [self swizzlingInstanceSelector:NSSelectorFromString(@"someDelegateTriggerWithArg:") withMethod:NSSelectorFromString(@"hk_someDelegateTriggerWithArg:")];
+    [self swizzleInstanceSelector:NSSelectorFromString(@"someDelegateTriggerWithArg:") andSelector:NSSelectorFromString(@"hk_someDelegateTriggerWithArg:")];
     
     
-    originBlockMethodImp = [self getInstanceMethodImpletionWith:NSSelectorFromString(@"clickTestBlockCompletion:")];
+    originBlockMethodImp = [self instanceMethodIMPForSelector:NSSelectorFromString(@"clickTestBlockCompletion:")];
     
-    [self swizzlingInstanceSelector:NSSelectorFromString(@"clickTestBlockCompletion:") withMethod:NSSelectorFromString(@"hk_clickTestBlockCompletion:")];
+    [self swizzleInstanceSelector:NSSelectorFromString(@"clickTestBlockCompletion:") andSelector:NSSelectorFromString(@"hk_clickTestBlockCompletion:")];
 }
 
 #pragma mark - different methods

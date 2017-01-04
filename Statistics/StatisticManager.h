@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NSObject+Hook.h"
 
 @interface StatisticManager : NSObject
 
@@ -15,6 +14,10 @@
 
 /**
  @description batch add hook methods 
+ 
+ Apply to simple statistics without business logic...
+ if referring to more business logic，use class-category to achieve ，such as ViewController+Hook.m
+ 
  */
 - (void)setupStatisticsByHookObjects:(NSDictionary *)hookObjects;
 
